@@ -1,0 +1,16 @@
+.home-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-hero);
+  position: relative;
+  overflow: hidden;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}

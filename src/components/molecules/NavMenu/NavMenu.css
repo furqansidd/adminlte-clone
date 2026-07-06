@@ -1,0 +1,42 @@
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  /* Added 2px space (32px + 2px) */
+}
+
+.nav-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  /* Clean, geometric, light font weight */
+  color: #9A9FAD;
+  /* Muted grayish-blue tint */
+  padding: 8px 0;
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  /* Smooth transition to crisp white */
+}
+
+.nav-link.active {
+  color: #ffffff;
+  /* Active link is also pure white */
+}
+
+@media (max-width: 900px) {
+  .nav-list {
+    gap: 24px;
+  }
+
+  .nav-link {
+    font-size: 15px;
+  }
+}

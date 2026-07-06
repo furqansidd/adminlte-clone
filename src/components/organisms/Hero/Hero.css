@@ -1,0 +1,99 @@
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 150px 20px 40px;
+  position: relative;
+  z-index: 5;
+}
+
+.hero-container {
+  max-width: var(--max-width-content);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-title {
+  width: max-content;
+  /* Forces the container to expand to the text's full length */
+  max-width: 100%;
+  /* Prevents overflow on smaller mobile screens */
+  white-space: nowrap;
+  /* ABSOLUTELY stops the text from wrapping to a second line */
+  margin-left: auto;
+  /* Centers it if needed */
+  margin-right: auto;
+  /* Centers it if needed */
+  margin-bottom: 24px;
+  color: var(--color-text-light);
+  line-height: 1.15;
+}
+
+.hero-subtitle {
+  max-width: 852px;
+  /* max-w-2xl, wraps exactly into two/three balanced lines matching target design */
+  margin-bottom: 40px;
+  color: var(--color-text-muted);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Entry Animations */
+.animate-fade-in {
+  animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in-delayed {
+  opacity: 0;
+  animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+}
+
+.animate-fade-in-delayed-more {
+  opacity: 0;
+  animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 120px;
+  }
+
+  .hero-title {
+    margin-bottom: 16px;
+  }
+
+  .hero-subtitle {
+    margin-bottom: 30px;
+  }
+
+  .hero-buttons {
+    gap: 12px;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .hero-buttons>button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,20 @@
+.logo-container {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: -0.5px;
+  user-select: none;
+}
+
+.logo-text-admin {
+  color: var(--color-text-light);
+}
+
+.logo-text-lte {
+  color: var(--color-accent-blue);
+  font-style: italic;
+  font-weight: 500;
+  margin-left: 2px;
+}

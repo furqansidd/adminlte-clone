@@ -1,0 +1,93 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border-radius: 6px;
+  /* Smoothly rounded premium corners */
+}
+
+/* Variants */
+.btn-outline {
+  border: 1px solid #ffffff;
+  /* Solid white border */
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.btn-outline:hover {
+  border-color: #00a7d0;
+  /* Sky blue (lil dark) */
+  background-color: #00a7d0;
+  /* Fill with sky blue */
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 167, 208, 0.45);
+}
+
+.btn-primary {
+  background-color: var(--color-accent-blue);
+  border: 1px solid var(--color-accent-blue);
+  color: var(--color-text-light);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-blue-hover);
+  border-color: var(--color-accent-blue-hover);
+  box-shadow: 0 4px 15px rgba(0, 192, 239, 0.3);
+}
+
+.btn-subscribe {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: transparent;
+  color: var(--color-text-light);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  border-radius: 9999px;
+  padding: 11px 27px;
+}
+
+.btn-subscribe:hover {
+  background-color: var(--color-text-light);
+  color: var(--color-bg-dark);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.btn-text {
+  border: none;
+  background-color: transparent;
+  color: var(--color-text-muted);
+}
+
+.btn-text:hover {
+  color: var(--color-text-light);
+}
+
+/* Sizes */
+.btn-sm {
+  padding: 8px 24px;
+  font-size: 15px;
+}
+
+.btn-md {
+  padding: 14px 31px;
+  /* Increased by 3 pixels vertically and horizontally */
+  font-size: 14.5px;
+  /* Compact premium typography ratio */
+  font-weight: 500;
+}
+
+.btn-lg {
+  padding: 14px 40px;
+  font-size: 18px;
+}
+
+/* Border Radius */
+.btn-pill {
+  border-radius: var(--border-radius-pill);
+}

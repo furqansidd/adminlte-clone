@@ -1,0 +1,218 @@
+.showcase-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Expanded to 1200px to replicate wide-screen panorama look */
+  height: 480px;
+  margin: 0 auto;
+  overflow: visible; /* Allows side preview wings to stretch naturally */
+  position: relative;
+  z-index: 4;
+}
+
+.showcase-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.showcase-card {
+  position: absolute;
+  top: 50%;
+  width: 58%;
+  border-radius: 12px; /* rounded-xl */
+  overflow: hidden;
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  background-color: var(--color-bg-dark);
+  transform-origin: center center;
+  transition: transform var(--transition-normal), filter var(--transition-normal), z-index var(--transition-normal), opacity var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+/* Side cards aspect ratio and image fill */
+.card-left,
+.card-right {
+  aspect-ratio: 1.6;
+}
+
+.card-left .showcase-img,
+.card-right .showcase-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Center Prominent Card */
+.card-center {
+  z-index: 20; /* Prominent center layer */
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0) scale(1);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.4); /* Smooth dark diffuse blur at 40% opacity */
+  opacity: 1;
+}
+
+.card-center .showcase-img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: contain;
+  display: block;
+}
+
+.showcase-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(6, 10, 23, 0.35);
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
+}
+
+/* Left Card Offset - Pushed wider */
+.card-left {
+  z-index: 10;
+  left: 50%;
+  transform: translate3d(-95%, -50%, 0) scale(0.85); /* Pushed wider to -95% */
+  opacity: 0.15; /* Precision dimming to 15% opacity */
+}
+
+
+/* Right Card Offset - Pushed wider */
+.card-right {
+  z-index: 10;
+  left: 50%;
+  transform: translate3d(-5%, -50%, 0) scale(0.85); /* Pushed wider to -5% */
+  opacity: 0.15; /* Precision dimming to 15% opacity */
+}
+
+
+/* Entrance Animations adjusted for vertical center translation */
+.animate-zoom-in {
+  animation: zoomIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: translate3d(-50%, -40%, 0) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 0) scale(1);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-120%, -50%, 0) scale(0.7);
+  }
+  to {
+    opacity: 0.15;
+    transform: translate3d(-95%, -50%, 0) scale(0.85);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translate3d(20%, -50%, 0) scale(0.7);
+  }
+  to {
+    opacity: 0.15;
+    transform: translate3d(-5%, -50%, 0) scale(0.85);
+  }
+}
+
+/* Responsive Showcase Scaling */
+@media (max-width: 992px) {
+  .showcase-section {
+    height: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .showcase-section {
+    height: 300px;
+  }
+  .showcase-card {
+    width: 70%;
+  }
+  .card-left {
+    transform: translate3d(-85%, -50%, 0) scale(0.85);
+  }
+  .card-right {
+    transform: translate3d(-15%, -50%, 0) scale(0.85);
+  }
+  @keyframes slideLeft {
+    from {
+      opacity: 0;
+      transform: translate3d(-120%, -50%, 0) scale(0.7);
+    }
+    to {
+      opacity: 0.15;
+      transform: translate3d(-85%, -50%, 0) scale(0.85);
+    }
+  }
+  @keyframes slideRight {
+    from {
+      opacity: 0;
+      transform: translate3d(20%, -50%, 0) scale(0.7);
+    }
+    to {
+      opacity: 0.15;
+      transform: translate3d(-15%, -50%, 0) scale(0.85);
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .showcase-section {
+    height: 220px;
+  }
+  .showcase-card {
+    width: 80%;
+  }
+  .card-left {
+    transform: translate3d(-75%, -50%, 0) scale(0.85);
+    opacity: 0.1;
+  }
+  .card-right {
+    transform: translate3d(-25%, -50%, 0) scale(0.85);
+    opacity: 0.1;
+  }
+  @keyframes slideLeft {
+    from {
+      opacity: 0;
+      transform: translate3d(-120%, -50%, 0) scale(0.7);
+    }
+    to {
+      opacity: 0.1;
+      transform: translate3d(-75%, -50%, 0) scale(0.85);
+    }
+  }
+  @keyframes slideRight {
+    from {
+      opacity: 0;
+      transform: translate3d(20%, -50%, 0) scale(0.7);
+    }
+    to {
+      opacity: 0.1;
+      transform: translate3d(-25%, -50%, 0) scale(0.85);
+    }
+  }
+}

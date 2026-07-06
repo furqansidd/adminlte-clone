@@ -1,0 +1,33 @@
+:root {
+  /* Color Palette */
+  --color-bg-dark: #0b0f19;
+  --color-bg-hero: radial-gradient(circle at top, #0c101d 0%, #0b0f19 100%);
+  --color-accent-blue: #00c0ef;
+  --color-accent-blue-hover: #00a7d0;
+  --color-text-light: #ffffff;
+  --color-text-muted: #94a3b8;
+  --color-border-subtle: rgba(255, 255, 255, 0.15);
+  --color-border-card: rgba(255, 255, 255, 0.08);
+  --color-card-bg: rgba(13, 22, 47, 0.45);
+  
+  /* Typography */
+  --font-primary: 'Inter', 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Layout & Spacing */
+  --max-width-content: 1200px;
+  --header-height: 80px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+
+  /* Transitions & Misc */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --border-radius-pill: 9999px;
+  --border-radius-card: 12px;
+  --box-shadow-card: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --backdrop-blur-card: blur(12px);
+}
